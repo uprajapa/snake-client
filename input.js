@@ -12,6 +12,8 @@ const setupInput = function () {
 const stdin = setupInput();
 
 const handleUserInput = function (key) {
+  conn.write(`Name: UV`);
+
   if (key == 'w') {
     conn.write('Move: up');
     console.log('Move: up');
@@ -26,6 +28,7 @@ const handleUserInput = function (key) {
   }
   if (key === 'd') {
     conn.write('Move: right');
+    conn.write('Say: LG');
     console.log('Move: right');
   }
   if (key === '\u0003') {
