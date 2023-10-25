@@ -1,4 +1,5 @@
-const { conn } = require("./client");
+const conn = require("./client");
+const { OUTPUT } = require('./constants');
 
 const setupInput = function () {
   const stdin = process.stdin;
@@ -14,22 +15,9 @@ const stdin = setupInput();
 const handleUserInput = function (key) {
   conn.write(`Name: UV`);
 
-  if (key == 'w') {
-    conn.write('Move: up');
-    console.log('Move: up');
-  }
-  if (key === 'a') {
-    conn.write('Move: left');
-    console.log('Move: left');
-  }
-  if (key === 's') {
-    conn.write('Move: down');
-    console.log('Move: down');
-  }
-  if (key === 'd') {
-    conn.write('Move: right');
-    conn.write('Say: LG');
-    console.log('Move: right');
+  if (OUTPUT[key] !== undefined) {
+    conn.write(OUTPUT[key]);
+    console.log(OUTPUT[key]);
   }
   if (key === '\u0003') {
     process.exit();

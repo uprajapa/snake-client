@@ -1,4 +1,4 @@
-const { conn } = require('../client');
+const conn = require('../client');
 const { stdin } = require('../input');
 
 console.log("Connecting ...");
