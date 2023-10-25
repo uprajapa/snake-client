@@ -13,8 +13,7 @@ const connect = function () {
     console.log(`In!`);
   });
 
-
   return conn;
 };
 
-module.exports = { connect, net };
+module.exports = { connect };
