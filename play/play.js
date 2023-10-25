@@ -1,9 +1,9 @@
-const { connect } = require('../client');
+const { conn } = require('../client');
 const { stdin } = require('../input');
 
 console.log("Connecting ...");
-connect();
+conn;
 stdin;
-// conn.on('connect', () => {
-//   conn.write(`Name: UV`);
-// });
+conn.on('connect', () => {
+  conn.write(`Name: UV`);
+});

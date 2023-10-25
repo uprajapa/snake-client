@@ -10,10 +10,12 @@ const connect = function () {
   // interpret incoming data as text
   conn.setEncoding("utf8");
   conn.on('connect', (data) => {
-    console.log(`In!`);
+    console.log(`In! ${data}`);
   });
 
   return conn;
 };
 
-module.exports = { connect };
+const conn = connect();
+
+module.exports = { conn };
